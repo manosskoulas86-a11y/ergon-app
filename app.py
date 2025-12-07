@@ -819,3 +819,38 @@ def main():
 # Εκκίνηση
 init_db()
 main()
+import streamlit as st
+import sqlite3
+from datetime import date
+import pandas as pd
+
+DB_PATH = "erp_ergon.db"  # ή erp_ergon_v2.db αν το άλλαξες
+
+def inject_global_css():
+    st.markdown("""
+    <style>
+    /* Γενικό πλάτος */
+    .main {
+        padding-top: 1.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    /* Κεντρικός τίτλος */
+    .cc-header {
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        background: linear-gradient(90deg, #0f4c81, #1565c0);
+        color: white;
+        margin-bottom: 1.5rem;
+    }
+    .cc-header h1 {
+        font-size: 1.7rem;
+        margin: 0;
+    }
+    .cc-header p {
+        margin: 0.2rem 0 0;
+        opacity: 0.9;
+        font-size: 0.9rem;
+    }
+    </style>
+    """, unsafe_allow_html=True)
